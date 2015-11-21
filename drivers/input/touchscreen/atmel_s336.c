@@ -5063,9 +5063,9 @@ static LGE_TOUCH_ATTR(knock_on_type, S_IRUGO, mxt_get_knockon_type, NULL);
 #if defined(CONFIG_TOUCHSCREEN_LGE_LPWG)
 static LGE_TOUCH_ATTR(lpwg_data, S_IRUGO | S_IWUSR, show_lpwg_data, store_lpwg_data);
 static LGE_TOUCH_ATTR(lpwg_notify, S_IRUGO | S_IWUSR, NULL, store_lpwg_notify);
-static LGE_TOUCH_ATTR(dt2w_enable, S_IRUGO | S_IWUSR, NULL, store_double_tap);
 #else
 static LGE_TOUCH_ATTR(touch_gesture, S_IRUGO | S_IWUSR, NULL, mxt_knock_on_store);
+static LGE_TOUCH_ATTR(dt2w_enable, S_IRUGO | S_IWUSR, NULL, store_double_tap);
 #endif
 static LGE_TOUCH_ATTR(delta, S_IRUGO, mxt_run_delta_show, NULL);
 static LGE_TOUCH_ATTR(chstatus, S_IRUGO, mxt_run_chstatus_show, NULL);
@@ -5101,9 +5101,9 @@ static struct attribute *lge_touch_attribute_list[] = {
 #if defined(CONFIG_TOUCHSCREEN_LGE_LPWG)
 	&lge_touch_attr_lpwg_data.attr,
 	&lge_touch_attr_lpwg_notify.attr,
-	&lge_touch_attr_dt2w_enable.attr,
 #else
 	&lge_touch_attr_touch_gesture.attr,
+	&lge_touch_attr_dt2w_enable.attr,
 #endif
 	&lge_touch_attr_delta.attr,
 	&lge_touch_attr_chstatus.attr,
